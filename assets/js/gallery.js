@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   const galleryRoot = document.querySelector("[data-gallery-page]");
   const galleryData = window.PORTFOLIO_GALLERY;
   const items = [];
@@ -35,7 +35,8 @@
                     data-buy="${image.buy || "#"}"
                     alt="${escapeHtml(image.alt || image.title)}"
                     loading="lazy"
-                    decoding="async">
+                    decoding="async"
+                    draggable="false">
                 </button>
               </div>
             </div>
@@ -45,8 +46,7 @@
                 ${desc}
               </div>
               <div class="photo-links">
-                <a href="${image.full || image.src}" target="_blank" rel="noopener">View Full Resolution</a>
-                <a href="${image.buy || "#"}">Buy Print</a>
+                <a href="${image.buy || "#"}">Inquire About Prints</a>
               </div>
             </div>
           </article>
@@ -90,7 +90,7 @@
       `
       <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
         <div class="lightbox-stage" data-stage>
-          <img class="lightbox-image" alt="">
+          <img class="lightbox-image" alt="" draggable="false">
           <div class="lightbox-ui">
             <button class="icon-button" type="button" data-close aria-label="Close">&times;</button>
             <div>
@@ -105,8 +105,7 @@
           <h2 data-lightbox-title></h2>
           <p data-lightbox-description></p>
           <div class="lightbox-actions">
-            <a data-full-link target="_blank" rel="noopener">View Full Resolution</a>
-            <a data-buy-link>Buy Print</a>
+            <a data-buy-link>Inquire About Prints</a>
           </div>
         </div>
       </div>`
@@ -134,7 +133,6 @@
     image.alt = item.img.alt || item.title;
     lightbox.querySelector("[data-lightbox-title]").textContent = item.title;
     lightbox.querySelector("[data-lightbox-description]").textContent = item.description;
-    lightbox.querySelector("[data-full-link]").href = item.src;
     lightbox.querySelector("[data-buy-link]").href = item.buy;
     lightbox.classList.add("is-open");
     document.body.classList.add("lightbox-open");
@@ -202,6 +200,14 @@
       dragStart = null;
       stage.classList.remove("is-dragging");
     });
+
+    document.addEventListener("contextmenu", (event) => {
+      if (event.target.closest("img")) event.preventDefault();
+    });
+
+    document.addEventListener("dragstart", (event) => {
+      if (event.target.closest("img")) event.preventDefault();
+    });
   }
 
   renderGallery();
@@ -209,3 +215,6 @@
   detectPanoramas();
   bindLightbox();
 })();
+
+
+

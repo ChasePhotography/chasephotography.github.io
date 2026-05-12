@@ -1,4 +1,4 @@
-# Still Horizon Photography Portfolio
+﻿# Still Horizon Photography Portfolio
 
 A complete static photography portfolio website ready for GitHub Pages. It uses only HTML, CSS, JavaScript, and local image assets.
 
@@ -39,7 +39,7 @@ A complete static photography portfolio website ready for GitHub Pages. It uses 
    - `assets/images/wildlife/`
    - `assets/images/panoramas/`
 2. Use preview images for faster loading if you have them, such as `alpine-basin-preview.jpg`.
-3. Keep full-resolution images in the same folder or in a `full/` subfolder.
+3. Upload web-sized portfolio copies, not your original full-resolution files.
 4. Open the matching gallery HTML file and update `window.PORTFOLIO_GALLERY`.
 
 Example:
@@ -48,7 +48,7 @@ Example:
 { 
   title: "Alpine Basin",
   src: "../assets/images/mountains/alpine-basin-preview.jpg",
-  full: "../assets/images/mountains/alpine-basin-full.jpg",
+  full: "../assets/images/mountains/alpine-basin-web.jpg",
   description: "Layered alpine ridges at first light.",
   alt: "Alpine basin with layered mountain ridges"
 }
@@ -64,6 +64,10 @@ Example:
 ## Panorama Notes
 
 Very wide images are detected automatically in `assets/js/gallery.js`. Images with a wide aspect ratio are displayed full-width, and on smaller screens the panorama frame allows horizontal scrolling.
+
+## Protecting Your Photos
+
+No public website can fully prevent copying. For safer publishing, export web-sized images only, keep originals offline, add a subtle watermark before upload, and use the included print inquiry links instead of full-resolution download links. The site also blocks casual right-click saving and image dragging, but those are deterrents rather than true security.
 
 ## Lightbox Controls
 
@@ -87,3 +91,4 @@ www.example.com
 ## Replacing the Placeholder Artwork
 
 The included SVG files are deployable placeholders. Replace them with your own `.jpg`, `.jpeg`, `.png`, `.webp`, `.avif`, or `.svg` files. The layout preserves original aspect ratios and does not force gallery images into cropped tiles on individual gallery pages.
+
