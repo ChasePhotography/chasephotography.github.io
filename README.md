@@ -1,4 +1,4 @@
-﻿# Still Horizon Photography Portfolio
+# Still Horizon Photography Portfolio
 
 A complete static photography portfolio website ready for GitHub Pages. It uses only HTML, CSS, JavaScript, and local image assets.
 
@@ -45,7 +45,7 @@ A complete static photography portfolio website ready for GitHub Pages. It uses 
 Example:
 
 ```html
-{ 
+{
   title: "Alpine Basin",
   src: "../assets/images/mountains/alpine-basin-preview.jpg",
   full: "../assets/images/mountains/alpine-basin-web.jpg",
@@ -91,4 +91,3 @@ www.example.com
 ## Replacing the Placeholder Artwork
 
 The included SVG files are deployable placeholders. Replace them with your own `.jpg`, `.jpeg`, `.png`, `.webp`, `.avif`, or `.svg` files. The layout preserves original aspect ratios and does not force gallery images into cropped tiles on individual gallery pages.
-
